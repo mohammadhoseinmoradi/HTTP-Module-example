@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>ورود به پنل کاربری</h2>
+
+        <fieldset class="style">
+            <legend>نام کاربری </legend>
+
+            <input type="text" class="textcreator" id="input1" placeholder="نام کاربری" onkeyup="insertUserName()">
+        </fieldset>
+        <p id="textUserName"></p>
+
+        <fieldset class="style">
+            <legend>رمز عبور </legend>
+
+            <input type="text" id="input2" class="textcreator" placeholder="رمز عبور" onkeyup="insertPassword()">
+        </fieldset>
+        <p id="textPassword"></p>
+
+        <fieldset class="style">
+            <legend>تکرار رمز عبور </legend>
+
+            <input type="text" id="input3" class="textcreator" placeholder="تکرار رمز عبور" onkeyup="insertReaptePassword()">
+        </fieldset>
+        <p id="textReapetPassword"></p>
+        <button id="btn" type="submit" onclick="check()">ورود</button>
+        <div class="signUp">
+            <p> حساب کاربری ندارید؟ <a href="">ثبت نام</a> </p>
+        </div>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

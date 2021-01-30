@@ -1,0 +1,19 @@
+{
+  "name": "especialurl",
+  "version": "1.0.0",
+  "description": "Especial Url and Costom Url",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohammadhoseinmoradi/mohammadhosein_moradi_hw12_maktab45.git"
+  },
+  "author": "mohammad hosein moradi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohammadhoseinmoradi/mohammadhosein_moradi_hw12_maktab45/issues"
+  },
+  "homepage": "https://github.com/mohammadhoseinmoradi/mohammadhosein_moradi_hw12_maktab45#readme"
+}
