@@ -39,6 +39,11 @@ h2 {
     margin: 0 90px 10px 90px;
 }
 
+.pCheck {
+    margin-top: -5px;
+    display: none;
+}
+
 .input-container {
     display: flex;
     width: 100%;

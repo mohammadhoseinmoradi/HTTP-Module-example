@@ -21,12 +21,34 @@ $(".btn").click(function() {
     let nameUser = $("#nameUsers")[0]
     let namePassword = $("#namePasswords")[0]
     if (nameUser.value === "" && namePassword.value === "") {
-        $('.input-field').css('border', '3px solid red')
+        $('.input-field').css("border", "3px solid red")
+        $('.pCheck').css("display", "block")
+        $('.pCheck').css("color", "red")
+        $('#nameUsers').attr("placeholder", "❌نام کاربری")
+        $('#namePasswords').attr("placeholder", "❌رمزعبور")
         let modalText = document.getElementById('modalText')
         modalText.innerHTML = "Please fill all input" + "    ❌"
         modal.style.fontSize = "21px"
         modalText.style.color = "red"
 
+    } else if (nameUser.value === "") {
+        console.log("--------------------------------------------------------------");
+        let modalText = document.getElementById('modalText')
+        $('#nameUsers').attr("placeholder", "❌نام کاربری")
+        modalText.innerHTML = "Please fill Name input" + "    ❌"
+        modal.style.fontSize = "21px"
+        modalText.style.color = "red"
+        $('#pcheckName').css("display", "block")
+        $('#pcheckName').css("color", "red")
+    } else if (namePassword.value === "") {
+        console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        let modalText = document.getElementById('modalText')
+        modalText.innerHTML = "Please fill Pass input" + "    ❌"
+        $('#namePasswords').attr("placeholder", "❌رمزعبور")
+        modal.style.fontSize = "21px"
+        modalText.style.color = "red"
+        $('#pcheckPass').css("display", "block")
+        $('#pcheckPass').css("color", "red")
     } else {
         console.log(namePassword.value)
         console.log(nameUser.value)
@@ -37,6 +59,10 @@ $(".btn").click(function() {
 })
 $(".close").click(function() {
     $('.input-field').css('border', '3px solid white')
+    $('#nameUsers').attr("placeholder", "نام کاربری")
+    $('#namePasswords').attr("placeholder", "رمزعبور")
+    $('.pCheck').css("display", "none")
+
 })
 
 function sendRequest(nameUser, namePassword) {
@@ -44,6 +70,7 @@ function sendRequest(nameUser, namePassword) {
         userName: nameUser,
         password: namePassword
     }]
+    console.log(UserInfo);
     let requestHttp = new XMLHttpRequest();
     requestHttp.onreadystatechange = function() {
         console.log(this.status);
