@@ -1,13 +1,14 @@
-// -------------------REQUIRES------------------
+// -------------------REQUIRES-------------------------------------------------------------------
 const http = require('http')
 const fs = require('fs')
 const resultCheck = require('./moudalCheack')
 const checkUser = require('./moudalCheack')
 const RES = require('./response');
-// ---------------------------------------------
+// -------------------SERVER---------------------------------------------------------------------
 http.createServer(function(request, response) {
-    // -----------URL / ------------------------
+    // -----------URLS REQUEST AND RESPONSE -----------------------------------------------------
     if (request.url === "/" && request.method === "GET") {
+
         fs.readFile('./index.html', 'utf8', (err, page) => {
             if (err) {
                 response.write("Error: " + err);
@@ -72,23 +73,19 @@ http.createServer(function(request, response) {
         })
 
     } else if (request.url === "/userInfo" && request.method === "POST") {
-        // response.statusCode = "300";
         request.on('data', function(data) {
-            console.log(`Data chunk available: ${data}`);
-
-            var userInfo = JSON.parse(data)
-            console.log(checkUser(userInfo));
-            sttautts(checkUser(userInfo))
-
-
+            console.log(`Data get : ${data}`);
+            var userInfo = JSON.parse(data, )
+            console.log(checkUser(userInfo), "==================================");
+            console.log(userInfo)
+            statusResult(checkUser(userInfo))
 
         })
 
-        function sttautts(a) {
+        function statusResult(a) {
             console.log(a, "lllllllllllllllllllllllllllllll")
             response.statusCode = a;
             response.end();
-
         }
     } else {
         response.write(" HAS BAD REQUEST PLEASE TRY AGAIN !!!!");
