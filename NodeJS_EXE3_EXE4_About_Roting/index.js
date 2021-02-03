@@ -1,14 +1,12 @@
-// -------------------REQUIRES------------------
+// -------------------REQUIRES-------------------------------------------
 const http = require('http')
 const fs = require('fs')
-    // ---------------------------------------------
+    // ---------------SERVER---------------------------------------------
 http.createServer(function(request, response) {
-    // -----------URL / ------------------------
+    // -----------URLS REQUEST ------------------------------------------
     if (request.url === "/" && request.method === "GET") {
-
         response.write("Hello Web Application");
         response.end();
-
 
     } else if (request.url === "/about" && request.method === "GET") {
         console.log(request.url)

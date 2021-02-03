@@ -1,9 +1,9 @@
-// -------------------REQUIRES------------------
+// -------------------REQUIRES-------------------------------------
 const http = require('http')
 const fs = require('fs')
-    // ---------------------------------------------
+    // -------------------SERVER----------------------------------------
 http.createServer(function(request, response) {
-    // -----------URL / ------------------------
+    // -----------URLS REQUEST -------------------------------------
     if (request.url === "/" && request.method === "GET") {
         response.setHeader("Content-Type", "text/html");
         fs.readFile('main.html', 'utf8', (err, page) => {

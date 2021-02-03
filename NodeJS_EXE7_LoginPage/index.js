@@ -3,8 +3,7 @@ const http = require('http')
 const fs = require('fs')
 const resultCheck = require('./moudalCheack')
 const checkUser = require('./moudalCheack')
-const RES = require('./response');
-// -------------------SERVER---------------------------------------------------------------------
+    // -------------------SERVER---------------------------------------------------------------------
 http.createServer(function(request, response) {
     // -----------URLS REQUEST AND RESPONSE -----------------------------------------------------
     if (request.url === "/" && request.method === "GET") {
@@ -76,21 +75,16 @@ http.createServer(function(request, response) {
         request.on('data', function(data) {
             console.log(`Data get : ${data}`);
             var userInfo = JSON.parse(data, )
-            console.log(checkUser(userInfo), "==================================");
-            console.log(userInfo)
             statusResult(checkUser(userInfo))
-
         })
 
         function statusResult(a) {
-            console.log(a, "lllllllllllllllllllllllllllllll")
             response.statusCode = a;
             response.end();
         }
     } else {
         response.write(" HAS BAD REQUEST PLEASE TRY AGAIN !!!!");
         response.end()
-
     }
 }).listen(3000)
 console.log(" THE SERVER IS STARTED IN 5005 !!!");
